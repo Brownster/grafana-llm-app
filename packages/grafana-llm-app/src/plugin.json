@@ -31,6 +31,22 @@
     "grafanaDependency": ">=9.5.2",
     "plugins": []
   },
+  "extensions": {
+    "addedComponents": [
+      {
+        "targets": ["grafana/app/chrome/v1"],
+        "title": "Grafana Copilot",
+        "description": "Floating Grafana Copilot chat drawer"
+      }
+    ],
+    "exposedComponents": [
+      {
+        "id": "grafana-llm-app/copilot/v1",
+        "title": "Grafana Copilot",
+        "description": "Floating Grafana Copilot chat drawer"
+      }
+    ]
+  },
   "iam": {
     "permissions": [
       {

@@ -7,6 +7,7 @@ import { GrafanaTheme2 } from '@grafana/data';
 import { Models } from './Models';
 import { MCPToolsWithProvider } from './MCPTools';
 import { testIds } from 'components/testIds';
+import { CopilotProvider } from '../components/Copilot/CopilotProvider';
 
 const getStyles = (theme: GrafanaTheme2) => ({
   container: css`
@@ -110,8 +111,10 @@ export function MainPage() {
   const styles = getStyles(theme);
 
   return (
-    <PluginPage>
-      <div data-testid={testIds.mainPage.container} className={styles.container}>
+    <>
+      <CopilotProvider />
+      <PluginPage>
+        <div data-testid={testIds.mainPage.container} className={styles.container}>
         <header className={styles.header}>
           <h1 className={styles.title}>Grafana LLM</h1>
           <p className={styles.subtitle}>Large Language Model integration with Model Context Protocol support</p>
@@ -154,5 +157,6 @@ export function MainPage() {
         </section>
       </div>
     </PluginPage>
+    </>
   );
 }
